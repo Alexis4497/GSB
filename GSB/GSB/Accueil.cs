@@ -16,5 +16,20 @@ namespace GSB
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Accueil_Load(object sender, EventArgs e)
+        {
+            menuStrip1.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
