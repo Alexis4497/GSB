@@ -95,13 +95,13 @@
             // visiteurToolStripMenuItem
             // 
             this.visiteurToolStripMenuItem.Name = "visiteurToolStripMenuItem";
-            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.visiteurToolStripMenuItem.Text = "Visiteur";
             // 
             // médecinToolStripMenuItem
             // 
             this.médecinToolStripMenuItem.Name = "médecinToolStripMenuItem";
-            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.médecinToolStripMenuItem.Text = "Médecin";
             // 
             // button1
