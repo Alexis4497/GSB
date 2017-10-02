@@ -20,8 +20,16 @@ namespace GSB
 
         private void RapportVisiteur_Load(object sender, EventArgs e)
         {
-            bsMedecin.DataSource = Model.MaConnexion.MEDECIN.ToList();
+
+            bsMedecin.DataSource = Model.MaConnexion.MEDECIN.ToList()
+                            .Select(x => new { x.idMedecin, info = x.nom + " " + x.prenom })
+                            .OrderBy(x => x.info);
+
+
+            comboMedecin.ValueMember = "idMedecin";
+            comboMedecin.DisplayMember = "info";
             comboMedecin.DataSource = bsMedecin;
+
 
 
         }
