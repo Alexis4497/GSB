@@ -76,6 +76,11 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="GSB_ZinadeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
@@ -164,6 +169,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>mdlGSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="GSB_ZinadeDataSet.xsc">
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_ZinadeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_ZinadeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_ZinadeDataSet.xss">
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </None>
     <None Include="mdlGSB.edmx.diagram">
       <DependentUpon>mdlGSB.edmx</DependentUpon>
     </None>

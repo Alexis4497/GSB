@@ -16,5 +16,11 @@ namespace GSB
         {
             InitializeComponent();
         }
+
+        private void RapportVisiteur_Load(object sender, EventArgs e)
+        {
+           
+
+        }
     }
 }

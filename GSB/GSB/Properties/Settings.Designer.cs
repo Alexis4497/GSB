@@ -22,5 +22,16 @@ namespace GSB.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.50;Initial Catalog=GSB_Zinade;Persist Security Info=True;Use" +
+            "r ID=SQLSamy;Password=Samsam3400")]
+        public string GSB_ZinadeConnectionString {
+            get {
+                return ((string)(this["GSB_ZinadeConnectionString"]));
+            }
+        }
     }
 }
