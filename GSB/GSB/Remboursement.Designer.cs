@@ -66,6 +66,7 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Nuitée",
@@ -176,6 +177,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Autres Frais";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -194,6 +196,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "Réinitialiser";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Remboursement
             // 

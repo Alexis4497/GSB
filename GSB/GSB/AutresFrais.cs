@@ -21,5 +21,17 @@ namespace GSB
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            monthCalendar1.ResetText();
+            textBox1.ResetText();
+            textBox2.ResetText();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

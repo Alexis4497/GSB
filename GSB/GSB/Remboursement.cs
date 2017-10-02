@@ -34,12 +34,27 @@ namespace GSB
 
         private void labelTypevehicule_Click(object sender, EventArgs e)
         {
-            labelTypevehicule.Hide();
+            //labelTypevehicule.Hide();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AutresFrais FautresFrais = new AutresFrais();
+            FautresFrais.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+
+            textBox1.ResetText();
+            textBox2.ResetText();
+            textBox3.ResetText();
         }
     }
 }
