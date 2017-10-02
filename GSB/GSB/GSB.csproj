@@ -34,8 +34,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,16 +64,88 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="AutresFrais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutresFrais.Designer.cs">
+      <DependentUpon>AutresFrais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Etat.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FAMILLE.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fichefrais.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FraisForfait.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratoire.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LigneFraisForfait.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LigneFraisHorsForfait.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDL_GSB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDL_GSB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDL_GSB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDL_GSB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MEDECIN.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICAMENT.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MOTIF.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFRIR.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAPPORT.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Remboursement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Remboursement.Designer.cs">
       <DependentUpon>Remboursement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Secteur.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPECIALITE.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Visiteur.cs">
+      <DependentUpon>MDL_GSB.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutresFrais.resx">
+      <DependentUpon>AutresFrais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +160,14 @@
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="MDL_GSB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MDL_GSB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MDL_GSB.edmx.diagram">
+      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +183,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MDL_GSB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MDL_GSB.Context.cs</LastGenOutput>
+      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+    </Content>
+    <Content Include="MDL_GSB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+      <LastGenOutput>MDL_GSB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

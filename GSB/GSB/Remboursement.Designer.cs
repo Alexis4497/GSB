@@ -39,19 +39,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.labelTypevehicule = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(12, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 1;
@@ -146,15 +144,6 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "29,00€";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 279);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Autres Frais";
-            // 
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
@@ -163,7 +152,7 @@
             "Véhicule 5/CV Diesel  0.58€/km",
             "Véhicule 4CV Essence  0.62€/km",
             "Véhicule 5/6CV Essence  0.67€/km"});
-            this.checkedListBox2.Location = new System.Drawing.Point(101, 136);
+            this.checkedListBox2.Location = new System.Drawing.Point(93, 163);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(201, 64);
             this.checkedListBox2.TabIndex = 15;
@@ -172,57 +161,50 @@
             // labelTypevehicule
             // 
             this.labelTypevehicule.AutoSize = true;
-            this.labelTypevehicule.Location = new System.Drawing.Point(12, 159);
+            this.labelTypevehicule.Location = new System.Drawing.Point(12, 189);
             this.labelTypevehicule.Name = "labelTypevehicule";
             this.labelTypevehicule.Size = new System.Drawing.Size(75, 13);
             this.labelTypevehicule.TabIndex = 16;
             this.labelTypevehicule.Text = "Type Véhicule";
             this.labelTypevehicule.Click += new System.EventHandler(this.labelTypevehicule_Click);
             // 
-            // textBox4
+            // button1
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 267);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 17;
+            this.button1.Location = new System.Drawing.Point(32, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Autres Frais";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // button2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(118, 270);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Libellé";
+            this.button2.Location = new System.Drawing.Point(458, 326);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Valider";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // button3
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 293);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 19;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(109, 296);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Montant";
+            this.button3.Location = new System.Drawing.Point(374, 326);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Réinitialiser";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Remboursement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 376);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(566, 378);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelTypevehicule);
             this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -253,12 +235,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label labelTypevehicule;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

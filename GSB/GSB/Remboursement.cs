@@ -36,5 +36,10 @@ namespace GSB
         {
             labelTypevehicule.Hide();
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
