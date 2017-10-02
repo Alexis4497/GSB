@@ -64,67 +64,72 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="AutresFrais.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AutresFrais.Designer.cs">
-      <DependentUpon>AutresFrais.cs</DependentUpon>
-    </Compile>
     <Compile Include="Etat.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="FAMILLE.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="fichefrais.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="FraisForfait.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GSB_ZinadeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Laboratoire.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="LigneFraisForfait.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="LigneFraisHorsForfait.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="MDL_GSB.Context.cs">
+    <Compile Include="mdlGSB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MDL_GSB.Context.tt</DependentUpon>
+      <DependentUpon>mdlGSB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="MDL_GSB.cs">
+    <Compile Include="mdlGSB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="MDL_GSB.Designer.cs">
+    <Compile Include="mdlGSB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
     </Compile>
     <Compile Include="MEDECIN.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="MEDICAMENT.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="MOTIF.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="OFFRIR.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RAPPORT.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RapportVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RapportVisiteur.Designer.cs">
+      <DependentUpon>RapportVisiteur.cs</DependentUpon>
     </Compile>
     <Compile Include="Region.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="Remboursement.cs">
       <SubType>Form</SubType>
@@ -133,19 +138,16 @@
       <DependentUpon>Remboursement.cs</DependentUpon>
     </Compile>
     <Compile Include="Secteur.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="SPECIALITE.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="Visiteur.cs">
-      <DependentUpon>MDL_GSB.tt</DependentUpon>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AutresFrais.resx">
-      <DependentUpon>AutresFrais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -157,15 +159,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RapportVisiteur.resx">
+      <DependentUpon>RapportVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="MDL_GSB.edmx">
+    <EntityDeploy Include="mdlGSB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MDL_GSB.Designer.cs</LastGenOutput>
+      <LastGenOutput>mdlGSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="MDL_GSB.edmx.diagram">
-      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+    <None Include="GSB_ZinadeDataSet.xsc">
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_ZinadeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_ZinadeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_ZinadeDataSet.xss">
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mdlGSB.edmx.diagram">
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -185,15 +201,15 @@
     <None Include="img\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MDL_GSB.Context.tt">
+    <Content Include="mdlGSB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MDL_GSB.Context.cs</LastGenOutput>
-      <DependentUpon>MDL_GSB.edmx</DependentUpon>
+      <LastGenOutput>mdlGSB.Context.cs</LastGenOutput>
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
     </Content>
-    <Content Include="MDL_GSB.tt">
+    <Content Include="mdlGSB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MDL_GSB.edmx</DependentUpon>
-      <LastGenOutput>MDL_GSB.cs</LastGenOutput>
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
+      <LastGenOutput>mdlGSB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
