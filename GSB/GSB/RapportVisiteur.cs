@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GSB
 {
@@ -19,7 +20,9 @@ namespace GSB
 
         private void RapportVisiteur_Load(object sender, EventArgs e)
         {
-           
+            bsMedecin.DataSource = Model.MaConnexion.MEDECIN.ToList();
+            comboMedecin.DataSource = bsMedecin;
+
 
         }
     }

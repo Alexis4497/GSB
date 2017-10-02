@@ -16,7 +16,8 @@ namespace GSB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Accueil());
+            Model.initialConnexion();
+            Application.Run(new RapportVisiteur());
         }
     }
 }
