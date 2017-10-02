@@ -60,6 +60,11 @@
     </Compile>
     <Compile Include="Visiteur.Designer.cs">
       <DependentUpon>Visiteur.cs</DependentUpon>
+    <Compile Include="Remboursement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remboursement.Designer.cs">
+      <DependentUpon>Remboursement.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
@@ -76,6 +81,8 @@
     </Compile>
     <EmbeddedResource Include="Visiteur.resx">
       <DependentUpon>Visiteur.cs</DependentUpon>
+    <EmbeddedResource Include="Remboursement.resx">
+      <DependentUpon>Remboursement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
