@@ -15,6 +15,7 @@ namespace GSB
         public Accueil()
         {
             InitializeComponent();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,17 +26,19 @@ namespace GSB
         private void Accueil_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'gSB_ZinadeDataSet.Visiteur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-            this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
+            //this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
             // TODO: cette ligne de code charge les données dans la table 'gSB_ZinadeDataSet.Visiteur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-            this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
+            // this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
             // TODO: cette ligne de code charge les données dans la table 'gSB_ZinadeDataSet.Visiteur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-            this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
-            menuStrip1.Hide();
+            //this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var filteredData = Model.MaConnexion.Visiteur.ToList()
+                .Where(x => x.identifiant.Equals(identifiantTextBox.Text));
+            // voir TP
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -48,6 +51,16 @@ namespace GSB
             this.Validate();
             this.visiteurBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.gSB_ZinadeDataSet);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
