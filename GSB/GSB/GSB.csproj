@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Visiteur.Designer.cs">
       <DependentUpon>Visiteur.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Remboursement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,7 @@
     </Compile>
     <EmbeddedResource Include="Visiteur.resx">
       <DependentUpon>Visiteur.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
     </EmbeddedResource>
