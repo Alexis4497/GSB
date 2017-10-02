@@ -24,12 +24,20 @@ namespace GSB
 
         private void Accueil_Load(object sender, EventArgs e)
         {
-            menuStrip1.Hide();
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void remboursementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Remboursement fremboursement = new Remboursement();
+            fremboursement.Show();
+        }
+
+       
     }
 }

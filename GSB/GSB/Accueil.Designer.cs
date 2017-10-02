@@ -37,6 +37,8 @@
             this.visiteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.médecinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.remboursementTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remboursementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +78,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personneToolStripMenuItem});
+            this.personneToolStripMenuItem,
+            this.remboursementTestToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(525, 24);
@@ -95,13 +98,13 @@
             // visiteurToolStripMenuItem
             // 
             this.visiteurToolStripMenuItem.Name = "visiteurToolStripMenuItem";
-            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.visiteurToolStripMenuItem.Text = "Visiteur";
             // 
             // médecinToolStripMenuItem
             // 
             this.médecinToolStripMenuItem.Name = "médecinToolStripMenuItem";
-            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.médecinToolStripMenuItem.Text = "Médecin";
             // 
             // button1
@@ -113,6 +116,22 @@
             this.button1.Text = "Validée";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // remboursementTestToolStripMenuItem
+            // 
+            this.remboursementTestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.remboursementToolStripMenuItem});
+            this.remboursementTestToolStripMenuItem.Name = "remboursementTestToolStripMenuItem";
+            this.remboursementTestToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.remboursementTestToolStripMenuItem.Text = "Remboursement test";
+            
+            // 
+            // remboursementToolStripMenuItem
+            // 
+            this.remboursementToolStripMenuItem.Name = "remboursementToolStripMenuItem";
+            this.remboursementToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.remboursementToolStripMenuItem.Text = "Remboursement";
+            this.remboursementToolStripMenuItem.Click += new System.EventHandler(this.remboursementToolStripMenuItem_Click);
             // 
             // Accueil
             // 
@@ -150,6 +169,8 @@
         private System.Windows.Forms.ToolStripMenuItem visiteurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem médecinToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem remboursementTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem remboursementToolStripMenuItem;
     }
 }
 
