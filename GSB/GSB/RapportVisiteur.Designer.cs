@@ -34,9 +34,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gSB_ZinadeDataSet = new GSB.GSB_ZinadeDataSet();
-            this.ligneFraisForfaitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ligneFraisForfaitTableAdapter = new GSB.GSB_ZinadeDataSetTableAdapters.LigneFraisForfaitTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,10 +43,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboMedecin = new System.Windows.Forms.ComboBox();
+            this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ligneFraisForfaitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -95,20 +92,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // gSB_ZinadeDataSet
-            // 
-            this.gSB_ZinadeDataSet.DataSetName = "GSB_ZinadeDataSet";
-            this.gSB_ZinadeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ligneFraisForfaitBindingSource
-            // 
-            this.ligneFraisForfaitBindingSource.DataMember = "LigneFraisForfait";
-            this.ligneFraisForfaitBindingSource.DataSource = this.gSB_ZinadeDataSet;
-            // 
-            // ligneFraisForfaitTableAdapter
-            // 
-            this.ligneFraisForfaitTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -185,20 +168,20 @@
             this.textBox5.Size = new System.Drawing.Size(181, 120);
             this.textBox5.TabIndex = 14;
             // 
-            // comboBox1
+            // comboMedecin
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(154, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.comboMedecin.FormattingEnabled = true;
+            this.comboMedecin.Location = new System.Drawing.Point(154, 57);
+            this.comboMedecin.Name = "comboMedecin";
+            this.comboMedecin.Size = new System.Drawing.Size(121, 21);
+            this.comboMedecin.TabIndex = 15;
             // 
             // RapportVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 411);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboMedecin);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -217,8 +200,7 @@
             this.Text = "RapportVisiteur";
             this.Load += new System.EventHandler(this.RapportVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ligneFraisForfaitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,9 +213,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private GSB_ZinadeDataSet gSB_ZinadeDataSet;
-        private System.Windows.Forms.BindingSource ligneFraisForfaitBindingSource;
-        private GSB_ZinadeDataSetTableAdapters.LigneFraisForfaitTableAdapter ligneFraisForfaitTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -243,6 +222,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboMedecin;
+        private System.Windows.Forms.BindingSource bsMedecin;
     }
 }
