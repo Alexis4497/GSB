@@ -76,11 +76,10 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestion.Designer.cs">
-      <DependentUpon>Gestion.cs</DependentUpon>
+    <Compile Include="GSB_ZinadeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
@@ -123,6 +122,12 @@
     <Compile Include="RAPPORT.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="RapportVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RapportVisiteur.Designer.cs">
+      <DependentUpon>RapportVisiteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Region.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
@@ -141,17 +146,8 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="visualVisiteur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="visualVisiteur.Designer.cs">
-      <DependentUpon>visualVisiteur.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestion.resx">
-      <DependentUpon>Gestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,16 +159,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RapportVisiteur.resx">
+      <DependentUpon>RapportVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="visualVisiteur.resx">
-      <DependentUpon>visualVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="mdlGSB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>mdlGSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="GSB_ZinadeDataSet.xsc">
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_ZinadeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_ZinadeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_ZinadeDataSet.xss">
+      <DependentUpon>GSB_ZinadeDataSet.xsd</DependentUpon>
+    </None>
     <None Include="mdlGSB.edmx.diagram">
       <DependentUpon>mdlGSB.edmx</DependentUpon>
     </None>
