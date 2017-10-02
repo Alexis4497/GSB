@@ -34,8 +34,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,19 +64,82 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Etat.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FAMILLE.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fichefrais.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FraisForfait.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratoire.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LigneFraisForfait.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LigneFraisHorsForfait.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mdlGSB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlGSB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mdlGSB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mdlGSB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MEDECIN.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICAMENT.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MOTIF.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFRIR.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Visiteur.cs">
+    <Compile Include="RAPPORT.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RapportVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Visiteur.Designer.cs">
-      <DependentUpon>Visiteur.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="RapportVisiteur.Designer.cs">
+      <DependentUpon>RapportVisiteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Remboursement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Remboursement.Designer.cs">
       <DependentUpon>Remboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secteur.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPECIALITE.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Visiteur.cs">
+      <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
@@ -80,12 +154,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Visiteur.resx">
-      <DependentUpon>Visiteur.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="RapportVisiteur.resx">
+      <DependentUpon>RapportVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="mdlGSB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mdlGSB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="mdlGSB.edmx.diagram">
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,6 +183,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mdlGSB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>mdlGSB.Context.cs</LastGenOutput>
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
+    </Content>
+    <Content Include="mdlGSB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mdlGSB.edmx</DependentUpon>
+      <LastGenOutput>mdlGSB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
