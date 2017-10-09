@@ -52,8 +52,9 @@
             // visiteursToolStripMenuItem
             // 
             this.visiteursToolStripMenuItem.Name = "visiteursToolStripMenuItem";
-            this.visiteursToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.visiteursToolStripMenuItem.Text = "Visiteurs";
+            this.visiteursToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.visiteursToolStripMenuItem.Text = "Accueil";
+            this.visiteursToolStripMenuItem.Click += new System.EventHandler(this.visiteursToolStripMenuItem_Click);
             // 
             // button1
             // 

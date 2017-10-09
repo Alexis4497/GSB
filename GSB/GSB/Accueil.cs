@@ -13,6 +13,21 @@ namespace GSB
 {
     public partial class Accueil : Form
     {
+        private static bool verifConnect = false;
+
+        public bool VerifConnect
+        {
+            get
+            {
+                return verifConnect;
+            }
+
+            set
+            {
+                verifConnect = value;
+            }
+        }
+
         public Accueil()
         {
             InitializeComponent();
@@ -49,7 +64,24 @@ namespace GSB
             return sb.ToString();
             }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+
+        private void visiteurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.visiteurBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.gSB_ZinadeDataSet);
+
+        }
+
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void validConnexion_Click_1(object sender, EventArgs e)
         {
             var filteredData = Model.MaConnexion.Visiteur.ToList()
                 .Where(x => x.identifiant.Equals(identifiantTextBox.Text));
@@ -67,46 +99,17 @@ namespace GSB
                 string pswdc = monuser.password.Substring(2); // Pbs de l'hexa 0x sur sqlserver
                 if (pswdc.Equals(passwdCrypte) || monuser.password.Equals(passwdCrypte))
                 {
-                    MessageBox.Show("Bienvenue sur GSB","Connexion réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Menu menu = new Menu();
+                    Accueil.verifConnect = true;
+                    MessageBox.Show("Bienvenue sur GSB", "Connexion réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
+                    Menu menu = new Menu();                    
                     this.Hide();
-                    menu.Show();           
-
+                    menu.Show();
                 }
                 else
                 {
                     MessageBox.Show("Votre mot de passe est incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void visiteurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.visiteurBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.gSB_ZinadeDataSet);
-
-        }
-
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void identifiantTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

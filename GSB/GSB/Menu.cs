@@ -12,9 +12,23 @@ namespace GSB
 {
     public partial class Menu : Form
     {
+        Accueil login = new Accueil();
+
         public Menu()
         {
-            InitializeComponent();
+           
+            if (login.VerifConnect == true)
+            {
+                InitializeComponent();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour accéder à ce formulaire", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                login.Show();
+            }
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)

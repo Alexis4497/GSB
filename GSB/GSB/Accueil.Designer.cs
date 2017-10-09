@@ -32,11 +32,7 @@
             System.Windows.Forms.Label identifiantLabel;
             System.Windows.Forms.Label passwordLabel;
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.personneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visiteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.médecinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.validConnexion = new System.Windows.Forms.Button();
             this.gSB_ZinadeDataSet = new GSB.GSB_ZinadeDataSet();
             this.visiteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visiteurTableAdapter = new GSB.GSB_ZinadeDataSetTableAdapters.VisiteurTableAdapter();
@@ -44,84 +40,51 @@
             this.identifiantTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bsConnect = new System.Windows.Forms.BindingSource(this.components);
             identifiantLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConnect)).BeginInit();
             this.SuspendLayout();
             // 
             // identifiantLabel
             // 
             identifiantLabel.AutoSize = true;
-            identifiantLabel.Location = new System.Drawing.Point(60, 185);
+            identifiantLabel.Location = new System.Drawing.Point(57, 185);
             identifiantLabel.Name = "identifiantLabel";
-            identifiantLabel.Size = new System.Drawing.Size(55, 13);
+            identifiantLabel.Size = new System.Drawing.Size(58, 13);
             identifiantLabel.TabIndex = 8;
-            identifiantLabel.Text = "identifiant:";
+            identifiantLabel.Text = "identifiant :";
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(60, 228);
+            passwordLabel.Location = new System.Drawing.Point(39, 228);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(55, 13);
+            passwordLabel.Size = new System.Drawing.Size(76, 13);
             passwordLabel.TabIndex = 9;
-            passwordLabel.Text = "password:";
+            passwordLabel.Text = "mot de passe :";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personneToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(294, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // personneToolStripMenuItem
+            // validConnexion
             // 
-            this.personneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visiteurToolStripMenuItem,
-            this.médecinToolStripMenuItem});
-            this.personneToolStripMenuItem.Name = "personneToolStripMenuItem";
-            this.personneToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.personneToolStripMenuItem.Text = "Personne";
-            // 
-            // visiteurToolStripMenuItem
-            // 
-            this.visiteurToolStripMenuItem.Name = "visiteurToolStripMenuItem";
-            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.visiteurToolStripMenuItem.Text = "Visiteur";
-            // 
-            // médecinToolStripMenuItem
-            // 
-            this.médecinToolStripMenuItem.Name = "médecinToolStripMenuItem";
-            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.médecinToolStripMenuItem.Text = "Médecin";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(63, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GSB.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.validConnexion.Location = new System.Drawing.Point(63, 272);
+            this.validConnexion.Name = "validConnexion";
+            this.validConnexion.Size = new System.Drawing.Size(75, 31);
+            this.validConnexion.TabIndex = 5;
+            this.validConnexion.Text = "Valider";
+            this.validConnexion.UseVisualStyleBackColor = true;
+            this.validConnexion.Click += new System.EventHandler(this.validConnexion_Click_1);
             // 
             // gSB_ZinadeDataSet
             // 
@@ -186,8 +149,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GSB.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(63, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // Accueil
             // 
+            this.AcceptButton = this.validConnexion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
@@ -200,7 +174,7 @@
             this.Controls.Add(identifiantLabel);
             this.Controls.Add(this.identifiantTextBox);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.validConnexion);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -209,11 +183,9 @@
             this.Name = "Accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConnect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,10 +194,7 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem personneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visiteurToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem médecinToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button validConnexion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private GSB_ZinadeDataSet gSB_ZinadeDataSet;
         private System.Windows.Forms.BindingSource visiteurBindingSource;
