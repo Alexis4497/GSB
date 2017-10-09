@@ -33,5 +33,30 @@ namespace GSB
 
 
         }
+
+        private void bsMedecin_CurrentChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboMedecin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //bsMedecin.DataSource = Model.MaConnexion.MEDECIN.ToList();
+            var filteredData = Model.MaConnexion.RAPPORT.ToList()
+                     .Where(x => x.idMedecin == int.Parse(comboMedecin.SelectedValue.ToString()));
+
+            bsRapport.DataSource = filteredData;
+
+
+            BindingSource MonRapport = new BindingSource();
+
+            MonRapport.DataSource = filteredData;
+            MonRapport.MoveFirst();
+
+            RAPPORT unRapport = (RAPPORT)MonRapport.Current;
+
+            textBox1.Text = unRapport.idRapport.ToString();
+        }
+
     }
 }
