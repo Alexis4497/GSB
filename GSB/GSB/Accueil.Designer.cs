@@ -44,12 +44,14 @@
             this.identifiantTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.bsConnect = new System.Windows.Forms.BindingSource(this.components);
             identifiantLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsConnect)).BeginInit();
             this.SuspendLayout();
             // 
             // identifiantLabel
@@ -79,7 +81,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(294, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // personneToolStripMenuItem
             // 
@@ -174,7 +175,6 @@
             this.passwordTextBox.PasswordChar = '•';
             this.passwordTextBox.Size = new System.Drawing.Size(116, 20);
             this.passwordTextBox.TabIndex = 10;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
             // button2
             // 
@@ -184,7 +184,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Accueil
             // 
@@ -214,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsConnect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +234,7 @@
         private System.Windows.Forms.TextBox identifiantTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource bsConnect;
     }
 }
 

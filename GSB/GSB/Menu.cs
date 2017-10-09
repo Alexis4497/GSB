@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace GSB
 {
-    public partial class Gestion : Form
+    public partial class Menu : Form
     {
-        public Gestion()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            visualVisiteur Fvisualvisiteur = new visualVisiteur();
+            Gestion gestion = new Gestion();
             this.Hide();
-            Fvisualvisiteur.Show();
+            gestion.Show();
         }
     }
 }
