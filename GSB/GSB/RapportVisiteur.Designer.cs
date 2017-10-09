@@ -45,8 +45,10 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboMedecin = new System.Windows.Forms.ComboBox();
             this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -176,6 +178,10 @@
             this.comboMedecin.Size = new System.Drawing.Size(121, 21);
             this.comboMedecin.TabIndex = 15;
             // 
+            // bsMedecin
+            // 
+            this.bsMedecin.CurrentChanged += new System.EventHandler(this.bsMedecin_CurrentChanged);
+            // 
             // RapportVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +207,7 @@
             this.Load += new System.EventHandler(this.RapportVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +231,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboMedecin;
         private System.Windows.Forms.BindingSource bsMedecin;
+        private System.Windows.Forms.BindingSource bsRapport;
     }
 }

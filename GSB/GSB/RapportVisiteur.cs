@@ -30,8 +30,16 @@ namespace GSB
             comboMedecin.DisplayMember = "info";
             comboMedecin.DataSource = bsMedecin;
 
-
+            bsMedecin.DataSource = Model.MaConnexion.RAPPORT.ToList();
 
         }
+
+        private void bsMedecin_CurrentChanged(object sender, EventArgs e)
+        {
+            bsMedecin.DataSource = Model.MaConnexion.MEDECIN.ToList();
+            MEDECIN vcurrent = (MEDECIN)bsMedecin.Current;
+           // bsRapport = vcurrent.RAPPORT.ToList();
+        }
+
     }
 }

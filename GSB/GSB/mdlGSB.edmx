@@ -770,14 +770,6 @@
         <Association Name="rapport_fk2">
           <End Role="MEDECIN" Type="Self.MEDECIN" Multiplicity="1" />
           <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MEDECIN">
-              <PropertyRef Name="idMedecin" />
-            </Principal>
-            <Dependent Role="RAPPORT">
-              <PropertyRef Name="idMedecin" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="offrir_fk2">
           <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="1" />
