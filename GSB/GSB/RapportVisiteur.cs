@@ -76,6 +76,7 @@ namespace GSB
                             .Where(x => x.idMedicament == int.Parse(unRapport.idMedecin.ToString()))
                             ;
                  }*/
+
                  dataGridView1.DataSource = bsOffre;
              }
              catch
