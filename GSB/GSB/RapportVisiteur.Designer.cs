@@ -45,8 +45,10 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboMedecin = new System.Windows.Forms.ComboBox();
             this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -57,6 +59,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Précédent";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -66,6 +69,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Suivant";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -201,6 +205,7 @@
             this.Load += new System.EventHandler(this.RapportVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +229,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboMedecin;
         private System.Windows.Forms.BindingSource bsMedecin;
+        private System.Windows.Forms.BindingSource bsRapport;
     }
 }
