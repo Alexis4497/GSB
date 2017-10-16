@@ -59,6 +59,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Précédent";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -68,6 +69,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Suivant";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -98,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 31);
+            this.label1.Location = new System.Drawing.Point(42, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 5;
@@ -107,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 66);
+            this.label2.Location = new System.Drawing.Point(42, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 6;
@@ -142,7 +144,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 28);
+            this.textBox1.Location = new System.Drawing.Point(154, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(58, 20);
@@ -173,7 +175,7 @@
             // comboMedecin
             // 
             this.comboMedecin.FormattingEnabled = true;
-            this.comboMedecin.Location = new System.Drawing.Point(154, 57);
+            this.comboMedecin.Location = new System.Drawing.Point(154, 20);
             this.comboMedecin.Name = "comboMedecin";
             this.comboMedecin.Size = new System.Drawing.Size(121, 21);
             this.comboMedecin.TabIndex = 15;
