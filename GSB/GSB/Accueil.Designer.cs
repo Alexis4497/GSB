@@ -129,6 +129,7 @@
             this.identifiantTextBox.Name = "identifiantTextBox";
             this.identifiantTextBox.Size = new System.Drawing.Size(116, 20);
             this.identifiantTextBox.TabIndex = 9;
+            this.identifiantTextBox.Text = "test";
             // 
             // passwordTextBox
             // 
@@ -138,6 +139,7 @@
             this.passwordTextBox.PasswordChar = '•';
             this.passwordTextBox.Size = new System.Drawing.Size(116, 20);
             this.passwordTextBox.TabIndex = 10;
+            this.passwordTextBox.Text = "test";
             // 
             // button2
             // 

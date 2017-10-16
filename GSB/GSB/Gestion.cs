@@ -12,9 +12,19 @@ namespace GSB
 {
     public partial class Gestion : Form
     {
+        Accueil login = new Accueil();
         public Gestion()
         {
-            InitializeComponent();
+            if (login.VerifConnect == true)
+            {
+                InitializeComponent();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être connecté pour accéder à ce formulaire", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                login.Show();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,6 +39,11 @@ namespace GSB
             Menu menu = new Menu();
             this.Hide();
             menu.Show();
+        }
+
+        private void Gestion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

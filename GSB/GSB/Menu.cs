@@ -20,6 +20,7 @@ namespace GSB
             if (login.VerifConnect == true)
             {
                 InitializeComponent();
+                nom.Text = login.InfoUser;
             }
             else
             {
@@ -36,6 +37,17 @@ namespace GSB
             Gestion gestion = new Gestion();
             this.Hide();
             gestion.Show();
+        }
+
+        private void disconnect_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogResult confirmDeconnect = MessageBox.Show("Voulez-vous vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            if (confirmDeconnect == DialogResult.Yes)
+            {
+                login.VerifConnect = false;
+                this.Hide();
+                login.Show();
+            }
         }
     }
 }
