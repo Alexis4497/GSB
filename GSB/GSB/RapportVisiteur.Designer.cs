@@ -46,9 +46,13 @@
             this.comboMedecin = new System.Windows.Forms.ComboBox();
             this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
             this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMedicamen = new System.Windows.Forms.BindingSource(this.components);
+            this.bsOffre = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedicamen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsOffre)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -206,6 +210,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedicamen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsOffre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +236,7 @@
         private System.Windows.Forms.ComboBox comboMedecin;
         private System.Windows.Forms.BindingSource bsMedecin;
         private System.Windows.Forms.BindingSource bsRapport;
+        private System.Windows.Forms.BindingSource bsMedicamen;
+        private System.Windows.Forms.BindingSource bsOffre;
     }
 }

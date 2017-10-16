@@ -63,6 +63,20 @@ namespace GSB
                 comboMedecin.ValueMember = "idMedecin";
                  comboMedecin.DisplayMember = "info";
                  comboMedecin.DataSource = bsMedecin;
+
+                 bsOffre.DataSource = Model.MaConnexion.OFFRIR.ToList()
+                             .Where(x => x.idRapport == int.Parse(unRapport.idRapport.ToString()))
+                             ;
+
+                
+
+              /*   foreach (BindingSource bsOffre in uneOffre)
+                 {
+                     bsMedicamen.DataSource = Model.MaConnexion.MEDICAMENT.ToList()
+                            .Where(x => x.idMedicament == int.Parse(unRapport.idMedecin.ToString()))
+                            ;
+                 }*/
+                 dataGridView1.DataSource = bsOffre;
              }
              catch
              {
