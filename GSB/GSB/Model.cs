@@ -9,9 +9,9 @@ namespace GSB
 {
     static class Model
     {
-        private static GSB_ZinadeEntities maConnexion;
+        private static GSB_ZinadeDataSet   maConnexion;
 
-        public static GSB_ZinadeEntities MaConnexion
+        public static GSB_ZinadeDataSet MaConnexion
         {
             get
             {
@@ -26,7 +26,7 @@ namespace GSB
 
         public static void initialConnexion()
         {
-            maConnexion = new GSB_ZinadeEntities();
+            maConnexion = new GSB_ZinadeDataSet();
         }
     }
 }

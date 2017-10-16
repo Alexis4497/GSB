@@ -181,6 +181,10 @@
             this.comboMedecin.TabIndex = 15;
             this.comboMedecin.SelectedIndexChanged += new System.EventHandler(this.comboMedecin_SelectedIndexChanged);
             // 
+            // bsMedecin
+            // 
+            this.bsMedecin.CurrentChanged += new System.EventHandler(this.bsMedecin_CurrentChanged);
+            // 
             // RapportVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
