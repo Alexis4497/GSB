@@ -64,12 +64,6 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="AutresFrais.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AutresFrais.Designer.cs">
-      <DependentUpon>AutresFrais.cs</DependentUpon>
-    </Compile>
     <Compile Include="Etat.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
@@ -79,8 +73,20 @@
     <Compile Include="fichefrais.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormFraisSUppTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFraisSUppTest.Designer.cs">
+      <DependentUpon>FormFraisSUppTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FraisSupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FraisSupp.Designer.cs">
+      <DependentUpon>FraisSupp.cs</DependentUpon>
     </Compile>
     <Compile Include="GSB_ZinadeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -149,14 +155,23 @@
     <Compile Include="SPECIALITE.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visiteur.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AutresFrais.resx">
-      <DependentUpon>AutresFrais.cs</DependentUpon>
+    <EmbeddedResource Include="FormFraisSUppTest.resx">
+      <DependentUpon>FormFraisSUppTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FraisSupp.resx">
+      <DependentUpon>FraisSupp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="mdlGSB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -15,14 +15,13 @@ namespace GSB
         public Remboursement()
         {
             InitializeComponent();
+            
         }
-
        
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         
         private void labelTypevehicule_Click(object sender, EventArgs e)
         {
@@ -36,13 +35,19 @@ namespace GSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AutresFrais FautresFrais = new AutresFrais();
-            FautresFrais.Show();
+            //Ouvrir la page AutresFrais
+           FraisSupp fFraisSupp = new FraisSupp();
+            fFraisSupp.Show();
+           
+
+            //Change directement les labels de la form Remboursements par les données saisies dans la form FraisSupp 
+            label17.Text = fFraisSupp.dateChoisie;
+            label18.Text = fFraisSupp.textBox1.Text;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
 
             textBox1.ResetText();
             textBox2.ResetText();
@@ -55,18 +60,18 @@ namespace GSB
             textBox9.ResetText();
             textBox10.ResetText();
         }
-
+        
         private void Remboursement_Load(object sender, EventArgs e)
         {
-            
-              
+           
+
 
         }
-       
-        
+
+
         private void checkBox3_CheckedChanged_1(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void label3_Click_1(object sender, EventArgs e)
@@ -76,10 +81,42 @@ namespace GSB
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            /*bool valideFrais = false;
+             
+            if()
+            */
+           
+
+           //if (méthode booléenne qui affirme que tous les champs ont été rempli)
+
+                MessageBox.Show("Votre fiche de frais à bien été enregistrée");
+            /*else 
+            MessageBox.Show("Erreur, veuillez vérifier les champs");*/
+        }
+       
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+      
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             double totalNuitee = 0;
             double totalRepas = 0;
@@ -100,12 +137,53 @@ namespace GSB
             catch
             {
 
-                
+
             }
+ }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
 
+        private void mesFichesDeFraisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void fichesDeFraisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Chiffres uniquement");
+            }
+            base.OnKeyPress(e);
+
+            
+        }*/
     }
-   
-}
+    }
+
+
