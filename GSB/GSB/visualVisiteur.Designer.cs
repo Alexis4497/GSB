@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,12 +43,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.secteurBox = new System.Windows.Forms.ComboBox();
             this.laboBox = new System.Windows.Forms.ComboBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.selectButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.gSB_ZinadeDataSet = new GSB.GSB_ZinadeDataSet();
             this.visiteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,8 +58,12 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.idBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurDataGridView)).BeginInit();
@@ -69,8 +73,10 @@
             // 
             this.nameBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nameBox.Enabled = false;
             this.nameBox.Location = new System.Drawing.Point(103, 137);
             this.nameBox.Name = "nameBox";
+            this.nameBox.ReadOnly = true;
             this.nameBox.Size = new System.Drawing.Size(121, 20);
             this.nameBox.TabIndex = 1;
             // 
@@ -127,8 +133,10 @@
             // 
             this.frstNameBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.frstNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.frstNameBox.Enabled = false;
             this.frstNameBox.Location = new System.Drawing.Point(103, 163);
             this.frstNameBox.Name = "frstNameBox";
+            this.frstNameBox.ReadOnly = true;
             this.frstNameBox.Size = new System.Drawing.Size(121, 20);
             this.frstNameBox.TabIndex = 5;
             // 
@@ -148,8 +156,10 @@
             // 
             this.addressBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.addressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addressBox.Enabled = false;
             this.addressBox.Location = new System.Drawing.Point(103, 189);
             this.addressBox.Name = "addressBox";
+            this.addressBox.ReadOnly = true;
             this.addressBox.Size = new System.Drawing.Size(151, 20);
             this.addressBox.TabIndex = 7;
             // 
@@ -169,8 +179,10 @@
             // 
             this.cpBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cpBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cpBox.Enabled = false;
             this.cpBox.Location = new System.Drawing.Point(103, 215);
             this.cpBox.Name = "cpBox";
+            this.cpBox.ReadOnly = true;
             this.cpBox.Size = new System.Drawing.Size(45, 20);
             this.cpBox.TabIndex = 9;
             // 
@@ -190,8 +202,10 @@
             // 
             this.cityBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cityBox.Enabled = false;
             this.cityBox.Location = new System.Drawing.Point(154, 215);
             this.cityBox.Name = "cityBox";
+            this.cityBox.ReadOnly = true;
             this.cityBox.Size = new System.Drawing.Size(100, 20);
             this.cityBox.TabIndex = 11;
             // 
@@ -207,13 +221,13 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "LABO";
             // 
-            // comboBox1
+            // secteurBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 242);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.secteurBox.FormattingEnabled = true;
+            this.secteurBox.Location = new System.Drawing.Point(103, 242);
+            this.secteurBox.Name = "secteurBox";
+            this.secteurBox.Size = new System.Drawing.Size(121, 21);
+            this.secteurBox.TabIndex = 15;
             // 
             // laboBox
             // 
@@ -225,7 +239,7 @@
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(239, 64);
+            this.searchBtn.Location = new System.Drawing.Point(242, 65);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(32, 23);
             this.searchBtn.TabIndex = 18;
@@ -250,15 +264,18 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Vider les champs";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // selectButton
             // 
-            this.button4.Location = new System.Drawing.Point(545, 317);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.selectButton.Location = new System.Drawing.Point(463, 289);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(75, 23);
+            this.selectButton.TabIndex = 21;
+            this.selectButton.Text = "Selectionner";
+            this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Visible = false;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // searchBox
             // 
@@ -307,21 +324,26 @@
             // 
             // visiteurDataGridView
             // 
+            this.visiteurDataGridView.AllowUserToAddRows = false;
+            this.visiteurDataGridView.AllowUserToDeleteRows = false;
             this.visiteurDataGridView.AutoGenerateColumns = false;
             this.visiteurDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.visiteurDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.visiteurDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.visiteurDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.visiteurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.visiteurDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn9});
             this.visiteurDataGridView.DataSource = this.visiteurBindingSource;
@@ -331,7 +353,7 @@
             this.visiteurDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.visiteurDataGridView.Size = new System.Drawing.Size(364, 220);
             this.visiteurDataGridView.TabIndex = 23;
-            this.visiteurDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.visiteurDataGridView_CellContentClick);
+            this.visiteurDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -352,6 +374,18 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "prenom";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "rue";
+            this.dataGridViewTextBoxColumn11.HeaderText = "rue";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "cp";
+            this.dataGridViewTextBoxColumn10.HeaderText = "cp";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ville";
@@ -364,6 +398,30 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "identifiant";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label9.Location = new System.Drawing.Point(36, 110);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(20, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "ID";
+            // 
+            // idBox
+            // 
+            this.idBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.idBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idBox.Cursor = System.Windows.Forms.Cursors.No;
+            this.idBox.Enabled = false;
+            this.idBox.Location = new System.Drawing.Point(103, 108);
+            this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
+            this.idBox.Size = new System.Drawing.Size(121, 20);
+            this.idBox.TabIndex = 25;
+            // 
             // visualVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,14 +430,16 @@
             this.BackgroundImage = global::GSB.Properties.Resources.logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(696, 412);
+            this.Controls.Add(this.idBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.visiteurDataGridView);
             this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.selectButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.laboBox);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.secteurBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cityBox);
@@ -421,12 +481,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox secteurBox;
         private System.Windows.Forms.ComboBox laboBox;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button selectButton;
         private System.Windows.Forms.TextBox searchBox;
         private GSB_ZinadeDataSet gSB_ZinadeDataSet;
         private System.Windows.Forms.BindingSource visiteurBindingSource;
@@ -436,7 +496,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox idBox;
     }
 }

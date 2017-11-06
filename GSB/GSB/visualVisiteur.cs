@@ -37,29 +37,63 @@ namespace GSB
 
         }
 
-        private void visiteurDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+ 
+        private void selectButton_Click(object sender, EventArgs e)
         {
-
+            nameBox.Text = visiteurDataGridView.CurrentRow.Cells[1].Value.ToString();
+            frstNameBox.Text = visiteurDataGridView.CurrentRow.Cells[2].Value.ToString();
+            cityBox.Text = visiteurDataGridView.CurrentRow.Cells[4].Value.ToString();
+            cpBox.Text = visiteurDataGridView.CurrentRow.Cells[5].Value.ToString();
+            addressBox.Text = visiteurDataGridView.CurrentRow.Cells[3].Value.ToString();
+            idBox.Text = visiteurDataGridView.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            var LQuery = Model.MaConnexion.Visiteur.ToList()
+            var LQuery = Model.MaConnexion.Visiteur.ToArray()
                            .Where(x => x.nom.ToLower().Contains(searchBox.Text))
-                           .Select(x => new { x.idLabo, x.nom, x.prenom, x.ville, x.identifiant, })
+                           .Select(x => new { x.idLabo, x.nom, x.prenom, x.ville, x.cp, x.rue, x.identifiant, })
                            .OrderBy(x => x.nom);
             visiteurBindingSource.DataSource = LQuery;
             visiteurDataGridView.DataSource = visiteurBindingSource;
-            var rowVisiteur = visiteurBindingSource.Current;
-            nameBox.Text = rowVisiteur.ToString();
 
             visiteurDataGridView.Columns[0].HeaderText = "IDLABO";
             visiteurDataGridView.Columns[1].HeaderText = "NOM";
             visiteurDataGridView.Columns[2].HeaderText = "PRENOM";
-            visiteurDataGridView.Columns[3].HeaderText = "VILLE";
-            visiteurDataGridView.Columns[4].HeaderText = "IDENT";
+            visiteurDataGridView.Columns[3].HeaderText = "RUE";
+            visiteurDataGridView.Columns[4].HeaderText = "CP";
+            visiteurDataGridView.Columns[5].HeaderText = "VILLE";
+            visiteurDataGridView.Columns[6].HeaderText = "ID";
+            visiteurDataGridView.Visible = true;
+            selectButton.Visible = true;
+            nameBox.Enabled = true;
+            frstNameBox.Enabled = true;
+            addressBox.Enabled = true;
+            cpBox.Enabled = true;
+            cityBox.Enabled = true;
+            secteurBox.Enabled = true;
+            laboBox.Enabled = true;
 
-
+            nameBox.ReadOnly = false;
+            frstNameBox.ReadOnly = false;
+            addressBox.ReadOnly = false;
+            cpBox.ReadOnly = false;
+            cityBox.ReadOnly = false;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            idBox.ResetText();
+            searchBox.ResetText();
+            nameBox.ResetText();
+            frstNameBox.ResetText();
+            addressBox.ResetText();
+            cpBox.ResetText();
+            cityBox.ResetText();
+            secteurBox.ResetText();
+            laboBox.ResetText();
+        }
+
+        
     }
 }
