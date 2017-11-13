@@ -1,5 +1,4 @@
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.Accueil.resources
-C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.Gestion.resources
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.Menu.resources
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.Properties.Resources.resources
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.Remboursement.resources
@@ -18,3 +17,6 @@ C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss 
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.pdb
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.csprojResolveAssemblyReference.cache
 C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.RapportVisiteur.resources
+C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.FormFraisSUppTest.resources
+C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.FraisSupp.resources
+C:\Users\Flavien\Documents\Visual Studio 2013\Projects\Application Galaxy Swiss Bourdin\GSB\GSB\GSB\obj\Debug\GSB.UserControl1.resources

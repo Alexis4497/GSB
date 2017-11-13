@@ -34,9 +34,9 @@ namespace GSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Gestion gestion = new Gestion();
+          //  Gestion gestion = new Gestion();
             this.Hide();
-            gestion.Show();
+           // gestion.Show();
         }
 
         private void disconnect_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
