@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GSB_ZinadeModelStoreContainer" CdmEntityContainer="GSB_ZinadeEntities">
+    <EntitySetMapping Name="Etat">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.Etat">
+        <MappingFragment StoreEntitySet="Etat">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAMILLE">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.FAMILLE">
+        <MappingFragment StoreEntitySet="FAMILLE">
+          <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+          <ScalarProperty Name="libFamille" ColumnName="libFamille" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fichefrais">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.fichefrais">
+        <MappingFragment StoreEntitySet="fichefrais">
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+          <ScalarProperty Name="mois" ColumnName="mois" />
+          <ScalarProperty Name="nbJustificatifs" ColumnName="nbJustificatifs" />
+          <ScalarProperty Name="montantValide" ColumnName="montantValide" />
+          <ScalarProperty Name="dateModif" ColumnName="dateModif" />
+          <ScalarProperty Name="idEtat" ColumnName="idEtat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FraisForfait">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.FraisForfait">
+        <MappingFragment StoreEntitySet="FraisForfait">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laboratoire">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.Laboratoire">
+        <MappingFragment StoreEntitySet="Laboratoire">
+          <ScalarProperty Name="idLabo" ColumnName="idLabo" />
+          <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LigneFraisForfait">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.LigneFraisForfait">
+        <MappingFragment StoreEntitySet="LigneFraisForfait">
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+          <ScalarProperty Name="mois" ColumnName="mois" />
+          <ScalarProperty Name="idFraisForfait" ColumnName="idFraisForfait" />
+          <ScalarProperty Name="quantite" ColumnName="quantite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LigneFraisHorsForfait">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.LigneFraisHorsForfait">
+        <MappingFragment StoreEntitySet="LigneFraisHorsForfait">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+          <ScalarProperty Name="mois" ColumnName="mois" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDECIN">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.MEDECIN">
+        <MappingFragment StoreEntitySet="MEDECIN">
+          <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
+          <ScalarProperty Name="departement" ColumnName="departement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICAMENT">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.MEDICAMENT">
+        <MappingFragment StoreEntitySet="MEDICAMENT">
+          <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
+          <ScalarProperty Name="nomCommercial" ColumnName="nomCommercial" />
+          <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+          <ScalarProperty Name="composition" ColumnName="composition" />
+          <ScalarProperty Name="effets" ColumnName="effets" />
+          <ScalarProperty Name="contreIndications" ColumnName="contreIndications" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOTIF">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.MOTIF">
+        <MappingFragment StoreEntitySet="MOTIF">
+          <ScalarProperty Name="idMotif" ColumnName="idMotif" />
+          <ScalarProperty Name="libMotif" ColumnName="libMotif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OFFRIR">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.OFFRIR">
+        <MappingFragment StoreEntitySet="OFFRIR">
+          <ScalarProperty Name="idRapport" ColumnName="idRapport" />
+          <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
+          <ScalarProperty Name="quantite" ColumnName="quantite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RAPPORT">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.RAPPORT">
+        <MappingFragment StoreEntitySet="RAPPORT">
+          <ScalarProperty Name="idRapport" ColumnName="idRapport" />
+          <ScalarProperty Name="dateRapport" ColumnName="dateRapport" />
+          <ScalarProperty Name="idMotif" ColumnName="idMotif" />
+          <ScalarProperty Name="bilan" ColumnName="bilan" />
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+          <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Region">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+          <ScalarProperty Name="libRegion" ColumnName="libRegion" />
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+          <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secteur">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.Secteur">
+        <MappingFragment StoreEntitySet="Secteur">
+          <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
+          <ScalarProperty Name="libSecteur" ColumnName="libSecteur" />
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPECIALITE">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.SPECIALITE">
+        <MappingFragment StoreEntitySet="SPECIALITE">
+          <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
+          <ScalarProperty Name="libSpecialite" ColumnName="libSpecialite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visiteur">
+      <EntityTypeMapping TypeName="GSB_ZinadeModel.Visiteur">
+        <MappingFragment StoreEntitySet="Visiteur">
+          <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+          <ScalarProperty Name="idLabo" ColumnName="idLabo" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="rue" ColumnName="rue" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
+          <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Travailler" TypeName="GSB_ZinadeModel.Travailler" StoreEntitySet="Travailler">
+      <EndProperty Name="Region">
+        <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+      </EndProperty>
+      <EndProperty Name="Visiteur">
+        <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

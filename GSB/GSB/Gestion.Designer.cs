@@ -119,6 +119,7 @@
             this.MinimumSize = new System.Drawing.Size(360, 437);
             this.Name = "Gestion";
             this.Text = "Gestion";
+            this.Load += new System.EventHandler(this.Gestion_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

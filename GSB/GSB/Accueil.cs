@@ -14,6 +14,7 @@ namespace GSB
     public partial class Accueil : Form
     {
         private static bool verifConnect = false;
+        private static string infoUser = "";
 
         public bool VerifConnect
         {
@@ -25,6 +26,19 @@ namespace GSB
             set
             {
                 verifConnect = value;
+            }
+        }
+
+        public string InfoUser
+        {
+            get
+            {
+                return infoUser;
+            }
+
+            set
+            {
+                infoUser = value;
             }
         }
 
@@ -100,6 +114,7 @@ namespace GSB
                 if (pswdc.Equals(passwdCrypte) || monuser.password.Equals(passwdCrypte))
                 {
                     Accueil.verifConnect = true;
+                    Accueil.infoUser = identifiantTextBox.Text;
                     MessageBox.Show("Bienvenue sur GSB", "Connexion réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
                     Menu menu = new Menu();                    
                     this.Hide();
