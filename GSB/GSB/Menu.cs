@@ -49,5 +49,10 @@ namespace GSB
                 login.Show();
             }
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
