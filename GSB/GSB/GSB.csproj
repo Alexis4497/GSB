@@ -13,6 +13,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publier\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,20 +88,14 @@
     <Compile Include="fichefrais.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="FormFraisSUppTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFraisSUppTest.Designer.cs">
-      <DependentUpon>FormFraisSUppTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="FraisSupp.cs">
+    <Compile Include="Gestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FraisSupp.Designer.cs">
-      <DependentUpon>FraisSupp.cs</DependentUpon>
+    <Compile Include="Gestion.Designer.cs">
+      <DependentUpon>Gestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GSB_ZinadeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -101,12 +110,6 @@
     </Compile>
     <Compile Include="LigneFraisHorsForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ListeFiches.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListeFiches.Designer.cs">
-      <DependentUpon>ListeFiches.cs</DependentUpon>
     </Compile>
     <Compile Include="mdlGSB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -129,6 +132,13 @@
     <Compile Include="MEDICAMENT.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="MOTIF.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
@@ -161,26 +171,23 @@
     <Compile Include="SPECIALITE.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Visiteur.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="visualVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualVisiteur.Designer.cs">
+      <DependentUpon>visualVisiteur.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFraisSUppTest.resx">
-      <DependentUpon>FormFraisSUppTest.cs</DependentUpon>
+    <EmbeddedResource Include="Gestion.resx">
+      <DependentUpon>Gestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FraisSupp.resx">
-      <DependentUpon>FraisSupp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListeFiches.resx">
-      <DependentUpon>ListeFiches.cs</DependentUpon>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,8 +205,8 @@
     <EmbeddedResource Include="Remboursement.resx">
       <DependentUpon>Remboursement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="visualVisiteur.resx">
+      <DependentUpon>visualVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="mdlGSB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -250,6 +257,23 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
