@@ -102,6 +102,12 @@
     <Compile Include="LigneFraisHorsForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ListeFiches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeFiches.Designer.cs">
+      <DependentUpon>ListeFiches.cs</DependentUpon>
+    </Compile>
     <Compile Include="mdlGSB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FraisSupp.resx">
       <DependentUpon>FraisSupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeFiches.resx">
+      <DependentUpon>ListeFiches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GSB
 {
-    public partial class FraisSupp : Remboursement
+    public partial class FraisSupp : Form
     {
         
         public string dateChoisie;
@@ -18,7 +18,7 @@ namespace GSB
         {
             
             InitializeComponent();
-            dateChoisie = monthCalendar1.SelectionRange.Start.ToShortDateString();
+   
            
           
 
@@ -37,11 +37,8 @@ namespace GSB
 
         public void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-           
-           
-            label6.Text = dateChoisie;
-           
-            
+            dateChoisie = monthCalendar1.SelectionRange.Start.ToShortDateString();
+            label6.Text = dateChoisie;  
         }
        
 
@@ -87,7 +84,20 @@ namespace GSB
         private void ajoutFrais_Click(object sender, EventArgs e)
         {
             Remboursement fRemboursement = new Remboursement() ;
+            fRemboursement.textBox11.Text = dateChoisie;
+            fRemboursement.textBox12.Text = textBox1.Text;
+            fRemboursement.textBox13.Text = textBox2.Text;
+            fRemboursement.textBox14.Text = textBox3.Text;
+            fRemboursement.textBox15.Text = textBox4.Text;
             
+            MessageBox.Show("Votre Frais Supplémentaire à bien été ajouté !");
+            
+           
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

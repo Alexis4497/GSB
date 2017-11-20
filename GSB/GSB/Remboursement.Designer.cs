@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -58,6 +60,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -67,14 +74,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichesDeFraisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesFichesDeFraisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label15 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gSB_ZinadeDataSet = new GSB.GSB_ZinadeDataSet();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(458, 326);
+            this.button2.Location = new System.Drawing.Point(470, 345);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
@@ -84,7 +96,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(374, 326);
+            this.button3.Location = new System.Drawing.Point(377, 345);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 19;
@@ -94,7 +106,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 326);
+            this.button1.Location = new System.Drawing.Point(12, 345);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -104,6 +116,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
@@ -127,8 +140,18 @@
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Location = new System.Drawing.Point(12, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 130);
+            this.panel1.Size = new System.Drawing.Size(528, 135);
             this.panel1.TabIndex = 27;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(455, 112);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(70, 20);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "Total";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label13
             // 
@@ -204,6 +227,7 @@
             // 
             // textBox9
             // 
+            this.textBox9.Enabled = false;
             this.textBox9.Location = new System.Drawing.Point(349, 88);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
@@ -212,6 +236,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.Enabled = false;
             this.textBox8.Location = new System.Drawing.Point(349, 43);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
@@ -221,6 +246,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(349, 66);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
@@ -310,7 +336,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(527, 287);
+            this.label14.Location = new System.Drawing.Point(530, 303);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(13, 13);
             this.label14.TabIndex = 32;
@@ -318,7 +344,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(419, 284);
+            this.textBox10.Location = new System.Drawing.Point(424, 300);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(100, 20);
@@ -328,11 +354,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(193, 9);
+            this.label1.Location = new System.Drawing.Point(203, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 25);
+            this.label1.Size = new System.Drawing.Size(163, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Frais Forfaitaires";
             // 
@@ -347,15 +373,61 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox15);
+            this.panel2.Controls.Add(this.textBox14);
+            this.panel2.Controls.Add(this.textBox13);
+            this.panel2.Controls.Add(this.textBox12);
+            this.panel2.Controls.Add(this.textBox11);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label17);
-            this.panel2.Location = new System.Drawing.Point(12, 173);
+            this.panel2.Location = new System.Drawing.Point(12, 200);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(528, 100);
+            this.panel2.Size = new System.Drawing.Size(528, 79);
             this.panel2.TabIndex = 34;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Enabled = false;
+            this.textBox15.Location = new System.Drawing.Point(429, 38);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(83, 20);
+            this.textBox15.TabIndex = 9;
+            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            // 
+            // textBox14
+            // 
+            this.textBox14.Enabled = false;
+            this.textBox14.Location = new System.Drawing.Point(337, 38);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(83, 20);
+            this.textBox14.TabIndex = 8;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Enabled = false;
+            this.textBox13.Location = new System.Drawing.Point(247, 38);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(64, 20);
+            this.textBox13.TabIndex = 7;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Enabled = false;
+            this.textBox12.Location = new System.Drawing.Point(124, 38);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(83, 20);
+            this.textBox12.TabIndex = 6;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Enabled = false;
+            this.textBox11.Location = new System.Drawing.Point(17, 38);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(83, 20);
+            this.textBox11.TabIndex = 5;
             // 
             // label21
             // 
@@ -405,9 +477,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(332, 282);
+            this.button4.Location = new System.Drawing.Point(349, 298);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(58, 23);
             this.button4.TabIndex = 35;
             this.button4.Text = "Total";
             this.button4.UseVisualStyleBackColor = true;
@@ -439,11 +511,33 @@
             this.mesFichesDeFraisToolStripMenuItem.Text = "Mes Fiches de Frais ";
             this.mesFichesDeFraisToolStripMenuItem.Click += new System.EventHandler(this.mesFichesDeFraisToolStripMenuItem_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Blue;
+            this.label15.Location = new System.Drawing.Point(235, 175);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(107, 22);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Autres Frais";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.gSB_ZinadeDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // gSB_ZinadeDataSet
+            // 
+            this.gSB_ZinadeDataSet.DataSetName = "GSB_ZinadeDataSet";
+            this.gSB_ZinadeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Remboursement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 380);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label14);
@@ -465,6 +559,8 @@
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,43 +568,52 @@
 
         #endregion
         public System.Windows.Forms.Button button2;
-       public System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-       public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fichesDeFraisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mesFichesDeFraisToolStripMenuItem;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem fichesDeFraisToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem mesFichesDeFraisToolStripMenuItem;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox textBox15;
+        public System.Windows.Forms.TextBox textBox14;
+        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private GSB_ZinadeDataSet gSB_ZinadeDataSet;
     }
 }
