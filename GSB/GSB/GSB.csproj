@@ -79,6 +79,12 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutVisiteur.Designer.cs">
+      <DependentUpon>AjoutVisiteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Etat.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
@@ -182,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutVisiteur.resx">
+      <DependentUpon>AjoutVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion.resx">
       <DependentUpon>Gestion.cs</DependentUpon>
