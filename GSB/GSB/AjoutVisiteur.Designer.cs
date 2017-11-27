@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.laboBox = new System.Windows.Forms.TextBox();
             this.idLaboBox = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.secteurBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,6 +50,8 @@
             this.visiteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visiteurTableAdapter = new GSB.GSB_ZinadeDataSetTableAdapters.VisiteurTableAdapter();
             this.tableAdapterManager = new GSB.GSB_ZinadeDataSetTableAdapters.TableAdapterManager();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).BeginInit();
@@ -79,15 +80,6 @@
             this.idLaboBox.Name = "idLaboBox";
             this.idLaboBox.Size = new System.Drawing.Size(37, 21);
             this.idLaboBox.TabIndex = 44;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(136, 363);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 23);
-            this.button3.TabIndex = 42;
-            this.button3.Text = "Vider les champs";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // saveButton
             // 
@@ -284,11 +276,33 @@
             this.tableAdapterManager.UpdateOrder = GSB.GSB_ZinadeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VisiteurTableAdapter = this.visiteurTableAdapter;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(136, 363);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 23);
+            this.button3.TabIndex = 42;
+            this.button3.Text = "Vider les champs";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.Location = new System.Drawing.Point(290, 235);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 13);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "AJOUT D\'UN VISITEUR";
+            // 
             // AjoutVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 492);
+            this.ClientSize = new System.Drawing.Size(506, 492);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.laboBox);
@@ -322,7 +336,6 @@
 
         private System.Windows.Forms.TextBox laboBox;
         private System.Windows.Forms.ComboBox idLaboBox;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.ComboBox secteurBox;
         private System.Windows.Forms.Label label8;
@@ -342,5 +355,7 @@
         private System.Windows.Forms.BindingSource visiteurBindingSource;
         private GSB_ZinadeDataSetTableAdapters.VisiteurTableAdapter visiteurTableAdapter;
         private GSB_ZinadeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
     }
 }

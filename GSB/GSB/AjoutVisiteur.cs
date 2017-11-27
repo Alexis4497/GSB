@@ -60,13 +60,44 @@ namespace GSB
             string mdpCrypte = getMd5Hash(res.ToString());
             return mdpCrypte;
         }
+        public string GenererId()
+        {
+            bool existID = false;
+            const string validNumber = "1234567890";
+            const string validAlpha = "abcdefghijklmnopqrstuvwxyz";
+            StringBuilder res1 = new StringBuilder();
+            StringBuilder res2 = new StringBuilder();
+            StringBuilder res3 = new StringBuilder();
+            Random rnd = new Random();
+            var alph = res1.Append(validAlpha[rnd.Next(validAlpha.Length)]);
+            var num1 = res2.Append(validNumber[rnd.Next(validNumber.Length)]).ToString();
+            var num2 = res3.Append(validNumber[rnd.Next(validNumber.Length)]).ToString();
+            var idVis = alph + num1 + num2;
+            var verifId = from v in Model.MaConnexion.Visiteur.ToArray()
+                          where v.idVisiteur == idVis
+                          select v;
+            foreach (Visiteur v in verifId)
+            {
+                existID = true;
+            }
+            if (existID == false)
+            {
+                return idVis;
+            }
+            else
+            {
+                GenererId();
+            }
+            return null;
+            
+        }
+        //public string genererPseudo()
         private void saveButton_Click(object sender, EventArgs e)
         {
-            /*DataClasses1DataContext vcontext = new DataClasses1DataContext();
 
-            _Visiteur visit = new _Visiteur()
+            Visiteur visit = new Visiteur()
             {
-                idVisiteur = "z87",
+                idVisiteur = GenererId(),
                 identifiant = (frstNameBox.Text.Substring(0, 1) + nameBox.Text).ToLower(),
                 nom = nameBox.Text,
                 prenom = frstNameBox.Text,
@@ -76,12 +107,12 @@ namespace GSB
                 idLabo = int.Parse(idLaboBox.Text),
                 password = GenererMDP(5)
             };
-            vcontext.Visiteur.InsertOnSubmit(visit);*/
-            
-            
+
+
+            Model.MaConnexion.Visiteur.Add(visit);
             try
             {
-                vcontext.SubmitChanges();
+                Model.MaConnexion.SaveChanges();
                 DialogResult confirm = MessageBox.Show("Le compte a bien été créé. Veuillez noter le mot de passe, il va désormais être encrypté.\n Mot de passe :" + mdpNonCrypte, "Compte créé", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (confirm == DialogResult.OK)
                 {
@@ -102,5 +133,6 @@ namespace GSB
 
         }
 
+        
     }
 }
