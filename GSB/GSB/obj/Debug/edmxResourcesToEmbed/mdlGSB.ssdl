@@ -74,6 +74,7 @@
     <Property Name="tel" Type="varchar" MaxLength="15" />
     <Property Name="idSpecialite" Type="char" MaxLength="3" />
     <Property Name="departement" Type="int" Nullable="false" />
+    <Property Name="coef" Type="int" />
   </EntityType>
   <EntityType Name="MEDICAMENT">
     <Key>
@@ -102,6 +103,14 @@
     <Property Name="idMedicament" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="quantite" Type="int" />
   </EntityType>
+  <EntityType Name="Presenter">
+    <Key>
+      <PropertyRef Name="idRapport" />
+      <PropertyRef Name="idMedicament" />
+    </Key>
+    <Property Name="idRapport" Type="int" Nullable="false" />
+    <Property Name="idMedicament" Type="char" MaxLength="12" Nullable="false" />
+  </EntityType>
   <EntityType Name="RAPPORT">
     <Key>
       <PropertyRef Name="idRapport" />
@@ -112,6 +121,8 @@
     <Property Name="bilan" Type="varchar" MaxLength="64" />
     <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="idMedecin" Type="int" Nullable="false" />
+    <Property Name="idRemplacant" Type="int" />
+    <Property Name="coef" Type="int" />
   </EntityType>
   <EntityType Name="Region">
     <Key>
@@ -121,6 +132,15 @@
     <Property Name="libRegion" Type="varchar" MaxLength="64" />
     <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="idSecteur" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REMPLACANT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
+    <Property Name="prenom" Type="varchar" MaxLength="50" />
+    <Property Name="coef" Type="int" />
   </EntityType>
   <EntityType Name="Secteur">
     <Key>
@@ -136,6 +156,16 @@
     </Key>
     <Property Name="idSpecialite" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="libSpecialite" Type="varchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Travailler">
     <Key>
@@ -233,6 +263,42 @@
       </Principal>
       <Dependent Role="Visiteur">
         <PropertyRef Name="idLabo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Presenter_MEDICAMENT">
+    <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="1" />
+    <End Role="Presenter" Type="Self.Presenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICAMENT">
+        <PropertyRef Name="idMedicament" />
+      </Principal>
+      <Dependent Role="Presenter">
+        <PropertyRef Name="idMedicament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Presenter_RAPPORT">
+    <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="1" />
+    <End Role="Presenter" Type="Self.Presenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RAPPORT">
+        <PropertyRef Name="idRapport" />
+      </Principal>
+      <Dependent Role="Presenter">
+        <PropertyRef Name="idRapport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RAPPORT_Remplacant">
+    <End Role="REMPLACANT" Type="Self.REMPLACANT" Multiplicity="0..1" />
+    <End Role="RAPPORT" Type="Self.RAPPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REMPLACANT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RAPPORT">
+        <PropertyRef Name="idRemplacant" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -380,6 +446,37 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="GSB_ZinadeModelStoreContainer">
     <EntitySet Name="Etat" EntityType="Self.Etat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" Schema="dbo" store:Type="Tables" />
@@ -392,10 +489,13 @@
     <EntitySet Name="MEDICAMENT" EntityType="Self.MEDICAMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MOTIF" EntityType="Self.MOTIF" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OFFRIR" EntityType="Self.OFFRIR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Presenter" EntityType="Self.Presenter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RAPPORT" EntityType="Self.RAPPORT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REMPLACANT" EntityType="Self.REMPLACANT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Secteur" EntityType="Self.Secteur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Travailler" EntityType="Self.Travailler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Visiteur" EntityType="Self.Visiteur" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__fichefrai__idEta__1FCDBCEB" Association="Self.FK__fichefrai__idEta__1FCDBCEB">
@@ -421,6 +521,18 @@
     <AssociationSet Name="FK_Laboratoire" Association="Self.FK_Laboratoire">
       <End Role="Laboratoire" EntitySet="Laboratoire" />
       <End Role="Visiteur" EntitySet="Visiteur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Presenter_MEDICAMENT" Association="Self.FK_Presenter_MEDICAMENT">
+      <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+      <End Role="Presenter" EntitySet="Presenter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Presenter_RAPPORT" Association="Self.FK_Presenter_RAPPORT">
+      <End Role="RAPPORT" EntitySet="RAPPORT" />
+      <End Role="Presenter" EntitySet="Presenter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAPPORT_Remplacant" Association="Self.FK_RAPPORT_Remplacant">
+      <End Role="REMPLACANT" EntitySet="REMPLACANT" />
+      <End Role="RAPPORT" EntitySet="RAPPORT" />
     </AssociationSet>
     <AssociationSet Name="FK_SECTEUR" Association="Self.FK_SECTEUR">
       <End Role="Secteur" EntitySet="Secteur" />

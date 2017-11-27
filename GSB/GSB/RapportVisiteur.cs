@@ -29,6 +29,8 @@ namespace GSB
                 textBox2.Hide();
                 button6.Hide();
                 label6.Hide();
+                dataGridView3.Hide();
+                button8.Hide();
 
              /*   var filteredData = Model.MaConnexion.RAPPORT.ToList();
                 bsRapport.DataSource = filteredData;
@@ -98,12 +100,13 @@ namespace GSB
                 comboMedecin.ValueMember = "idMedecin";
                  comboMedecin.DisplayMember = "info";
                  comboMedecin.DataSource = bsMedecin;
-
+               
                  bsOffre.DataSource = Model.MaConnexion.OFFRIR.ToList()
-                             .Where(x => x.idRapport == int.Parse(unRapport.idRapport.ToString()))
-                             ;
-                
+                             .Select(x => new { x.idMedicament, x.quantite, x.idRapport})
+                             .Where(x => x.idRapport == int.Parse(unRapport.idRapport.ToString()))  ;
 
+                // bsPresenter.DataSource = Model.MaConnexion.RAPPORT.Presenter.tolist();
+                     
               /*   foreach (BindingSource bsOffre in uneOffre)
                  {
                      bsMedicamen.DataSource = Model.MaConnexion.MEDICAMENT.ToList()
@@ -157,6 +160,8 @@ namespace GSB
             textBox1.Text = "";
             textBox3.Text = "";
             textBox5.Text = "";
+            button8.Show();
+
             
 
             bsMedecin2.DataSource = Model.MaConnexion.MOTIF.ToList();
@@ -172,8 +177,31 @@ namespace GSB
             comboBox1.DisplayMember = "libMotif";
             comboBox1.DataSource = bsMedecin2;
 
+            try
+            {
+                textBox6.Text = vRapport.REMPLACANT.nom;
+            }catch
+            {
+                textBox6.Text = "Nom";
+            }
 
-
+            try
+            {
+                textBox7.Text = vRapport.REMPLACANT.prenom;
+            }
+            catch 
+            {
+                textBox7.Text = "Prenom";
+            }
+            try
+            {
+                numericUpDown1.Value = decimal.Parse(vRapport.coef.ToString());
+            }
+            catch
+            {
+                numericUpDown1.Value = decimal.Parse("1");
+            }
+                
 
             comboMedecin.ValueMember = "idMedecin";
             comboMedecin.DisplayMember = "info";
@@ -194,9 +222,8 @@ namespace GSB
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-           
+        private void button5_Click(object sender, EventArgs e){
+          // enregistrement new
            
 
           /*  try
@@ -206,6 +233,13 @@ namespace GSB
                 newRapport.dateRapport = dateTimePicker1.Value;
                 newRapport.idMotif =  comboBox1.SelectedIndex;
                 newRapport.bilan = textBox5.Text;
+                newRapport.coef = int.Parse(numericUpDown1.Value.ToString());
+
+                REMPLACANT newRempla = new REMPLACANT();
+                newRempla.nom = textBox6.Text;
+                newRempla.prenom = textBox7.Text;
+
+                newRapport.REMPLACANT = newRempla;
 
                 Model.MaConnexion.RAPPORT.Add(newRapport);
                 Model.MaConnexion.SaveChanges();
@@ -281,15 +315,16 @@ namespace GSB
             textBox2.Show();
             button6.Show();
             label6.Show();
+            button8.Show();
 
-            //dateTimePicker1 = this.vRapport.dateRapport;
+          //  dateTimePicker1.Value(this.vRapport.dateRapport);
 
 
             bsMedecin2.DataSource = Model.MaConnexion.MOTIF.ToList();
 
 
 
-            // textBox4.Text = unRapport..ToString();
+           // comboBox1.SelectedItem() = unRapport.ToString();
             bsMedecin.DataSource = Model.MaConnexion.MEDECIN.ToList()
                             .Select(x => new { x.idMedecin, info = x.nom + " " + x.prenom })
                              .OrderBy(x => x.info);
@@ -298,7 +333,7 @@ namespace GSB
             comboBox1.DisplayMember = "libMotif";
             comboBox1.DataSource = bsMedecin2;
 
-
+           
 
 
             comboMedecin.ValueMember = "idMedecin";
@@ -316,10 +351,17 @@ namespace GSB
             dataGridView3.Columns[0].Name = "idMedicament";
             dataGridView3.Columns[1].Name = "Nom Medicament";
             dataGridView3.Columns[2].Name = "Quantité";
+
+            foreach (OFFRIR unoffrir in vRapport.OFFRIR)
+            {
+                dataGridView3.Rows.Add(unoffrir.idMedicament, unoffrir.MEDICAMENT.nomCommercial, unoffrir.quantite);
+            }
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            //enregistrement des modifs
             try
             {
 
@@ -327,11 +369,26 @@ namespace GSB
                 this.vRapport.dateRapport = dateTimePicker1.Value;
                 this.vRapport.idMotif = comboBox1.SelectedIndex;
                 this.vRapport.bilan = textBox5.Text;
+                this.vRapport.coef = int.Parse(numericUpDown1.Value.ToString());
+                this.vRapport.REMPLACANT.nom = textBox6.Text;
+                this.vRapport.REMPLACANT.prenom = textBox7.Text;
+
+                int i;
+                for (i = 0; i < ((dataGridView3.Rows.Count) - 1); i++)
+                {
+                    OFFRIR newOffrir = new OFFRIR();
+                    newOffrir.idMedicament = dataGridView3.Rows[i].Cells[0].Value.ToString();
+                    newOffrir.idRapport = int.Parse(vRapport.idRapport.ToString());
+                    newOffrir.quantite = int.Parse(dataGridView3.Rows[i].Cells[2].Value.ToString());
+                    Model.MaConnexion.OFFRIR.Add(newOffrir);
+                    Model.MaConnexion.SaveChanges();
+
+                };
 
                 Model.MaConnexion.SaveChanges();
 
                 MessageBox.Show("Enregistrement fait");
-                // foreach()
+               
 
             }
             catch (Exception erreur)
@@ -384,6 +441,8 @@ namespace GSB
 
             rapport();
         }
+
+
 
     }
 }
