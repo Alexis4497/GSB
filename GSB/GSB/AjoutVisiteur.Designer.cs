@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.laboBox = new System.Windows.Forms.TextBox();
             this.idLaboBox = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,7 +47,13 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.gSB_ZinadeDataSet = new GSB.GSB_ZinadeDataSet();
+            this.visiteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.visiteurTableAdapter = new GSB.GSB_ZinadeDataSetTableAdapters.VisiteurTableAdapter();
+            this.tableAdapterManager = new GSB.GSB_ZinadeDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // laboBox
@@ -241,11 +248,47 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "AJOUT D\'UN VISITEUR";
             // 
+            // gSB_ZinadeDataSet
+            // 
+            this.gSB_ZinadeDataSet.DataSetName = "GSB_ZinadeDataSet";
+            this.gSB_ZinadeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // visiteurBindingSource
+            // 
+            this.visiteurBindingSource.DataMember = "Visiteur";
+            this.visiteurBindingSource.DataSource = this.gSB_ZinadeDataSet;
+            // 
+            // visiteurTableAdapter
+            // 
+            this.visiteurTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EtatTableAdapter = null;
+            this.tableAdapterManager.FAMILLETableAdapter = null;
+            this.tableAdapterManager.fichefraisTableAdapter = null;
+            this.tableAdapterManager.FraisForfaitTableAdapter = null;
+            this.tableAdapterManager.LaboratoireTableAdapter = null;
+            this.tableAdapterManager.LigneFraisForfaitTableAdapter = null;
+            this.tableAdapterManager.LigneFraisHorsForfaitTableAdapter = null;
+            this.tableAdapterManager.MEDECINTableAdapter = null;
+            this.tableAdapterManager.MEDICAMENTTableAdapter = null;
+            this.tableAdapterManager.MOTIFTableAdapter = null;
+            this.tableAdapterManager.OFFRIRTableAdapter = null;
+            this.tableAdapterManager.RAPPORTTableAdapter = null;
+            this.tableAdapterManager.RegionTableAdapter = null;
+            this.tableAdapterManager.SecteurTableAdapter = null;
+            this.tableAdapterManager.SPECIALITETableAdapter = null;
+            this.tableAdapterManager.TravaillerTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = GSB.GSB_ZinadeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VisiteurTableAdapter = this.visiteurTableAdapter;
+            // 
             // AjoutVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 414);
+            this.ClientSize = new System.Drawing.Size(700, 492);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.laboBox);
@@ -268,6 +311,8 @@
             this.Text = "AjoutVisiteur";
             this.Load += new System.EventHandler(this.AjoutVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visiteurBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +338,9 @@
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private GSB_ZinadeDataSet gSB_ZinadeDataSet;
+        private System.Windows.Forms.BindingSource visiteurBindingSource;
+        private GSB_ZinadeDataSetTableAdapters.VisiteurTableAdapter visiteurTableAdapter;
+        private GSB_ZinadeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

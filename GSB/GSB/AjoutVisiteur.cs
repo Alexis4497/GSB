@@ -21,6 +21,8 @@ namespace GSB
 
         private void AjoutVisiteur_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'gSB_ZinadeDataSet.Visiteur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+            this.visiteurTableAdapter.Fill(this.gSB_ZinadeDataSet.Visiteur);
 
         }
         static string getMd5Hash(string input)
@@ -60,24 +62,27 @@ namespace GSB
         }
         private void saveButton_Click(object sender, EventArgs e)
         {
-            var inserttoDB = from v in Model.MaConnexion.Visiteur.ToArray()
-                             //where v.identifiant == visiteurDataGridView.CurrentRow.Cells[6].Value.ToString()
-                             select v;
-            foreach (Visiteur v in inserttoDB)
+            /*DataClasses1DataContext vcontext = new DataClasses1DataContext();
+
+            _Visiteur visit = new _Visiteur()
             {
-                v.identifiant = (frstNameBox.Text.Substring(0, 1) + nameBox.Text).ToLower();
-                v.nom = nameBox.Text;
-                v.prenom = frstNameBox.Text;
-                v.rue = addressBox.Text;
-                v.ville = cityBox.Text;
-                v.cp = cpBox.Text;
-                v.idLabo = int.Parse(idLaboBox.Text);
-                v.password = GenererMDP(5);
-            }
+                idVisiteur = "z87",
+                identifiant = (frstNameBox.Text.Substring(0, 1) + nameBox.Text).ToLower(),
+                nom = nameBox.Text,
+                prenom = frstNameBox.Text,
+                rue = addressBox.Text,
+                ville = cityBox.Text,
+                cp = cpBox.Text,
+                idLabo = int.Parse(idLaboBox.Text),
+                password = GenererMDP(5)
+            };
+            vcontext.Visiteur.InsertOnSubmit(visit);*/
+            
+            
             try
             {
-                Model.MaConnexion.SaveChanges();
-                DialogResult confirm = MessageBox.Show("Le compte a bien été créé. Veuillez à bien noter le mot de passe, il va désormais être encrypté.\n Mot de passe :" + mdpNonCrypte, "Compte créé", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                vcontext.SubmitChanges();
+                DialogResult confirm = MessageBox.Show("Le compte a bien été créé. Veuillez noter le mot de passe, il va désormais être encrypté.\n Mot de passe :" + mdpNonCrypte, "Compte créé", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (confirm == DialogResult.OK)
                 {
                     this.Hide();
@@ -88,5 +93,14 @@ namespace GSB
                 MessageBox.Show("Erreur lors de la mise à jour de la base de données", "Échec de la mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void visiteurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.visiteurBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.gSB_ZinadeDataSet);
+
+        }
+
     }
 }
