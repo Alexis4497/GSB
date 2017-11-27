@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace GSB
 {
     public partial class visualVisiteur : Form
     {
+        string mdpNonCrypte;
         public visualVisiteur()
         {
             InitializeComponent();
@@ -120,7 +122,28 @@ namespace GSB
             idLaboBox.ResetText();
             visiteurDataGridView.Visible = false;
         }
+        static string getMd5Hash(string input)
+        {
+            // Create a new instance of the MD5CryptoServiceProvider object.
+            MD5 md5Hasher = MD5.Create();
 
+            // Convert the input string to a byte array and compute the hash.
+            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input));
+
+            // Create a new Stringbuilder to collect the bytes
+            // and create a string.
+            StringBuilder sBuilder = new StringBuilder();
+
+            // Loop through each byte of the hashed data 
+            // and format each one as a hexadecimal string.
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            // Return the hexadecimal string.
+            return sBuilder.ToString();
+        }
         private void saveButton_Click(object sender, EventArgs e)
         {
             DialogResult confirmDeconnect = MessageBox.Show("Voulez-vous vous sauvegarder vos modifications sur la base de données ?", "Enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
@@ -178,22 +201,23 @@ namespace GSB
                 laboBox.Text = "Autres";
             }
             }
-
+        public string GenererMDP(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyz1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            mdpNonCrypte = res.ToString();
+            string mdpCrypte = getMd5Hash(res.ToString());
+            return mdpCrypte;
+        }
         private void addVisiteur_Click(object sender, EventArgs e)
         {
-            var inserttoDB =    from v in Model.MaConnexion.Visiteur.ToArray()
-                            where v.identifiant == visiteurDataGridView.CurrentRow.Cells[6].Value.ToString()
-                            select v;
-            foreach (Visiteur v in inserttoDB)
-            {
-                v.identifiant = (frstNameBox.Text.Substring(0, 1) + nameBox.Text).ToLower();
-                v.nom = nameBox.Text;
-                v.prenom = frstNameBox.Text;
-                v.rue = addressBox.Text;
-                v.ville = cityBox.Text;
-                v.cp = cpBox.Text;
-                v.idLabo = int.Parse(idLaboBox.Text);
-            }
+            AjoutVisiteur ajoutVisiteur = new AjoutVisiteur();
+            ajoutVisiteur.Show();
         }
     }
     }

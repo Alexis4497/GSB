@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutVisiteur.Designer.cs">
+      <DependentUpon>AjoutVisiteur.cs</DependentUpon>
     </Compile>
     <Compile Include="Etat.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
@@ -195,6 +202,9 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjoutVisiteur.resx">
+      <DependentUpon>AjoutVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FraisSupp.resx">
       <DependentUpon>FraisSupp.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +284,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
