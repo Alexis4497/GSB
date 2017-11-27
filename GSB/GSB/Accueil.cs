@@ -115,6 +115,7 @@ namespace GSB
                 {
                     Accueil.verifConnect = true;
                     Accueil.infoUser = identifiantTextBox.Text;
+                    Model.VisiteurConnecte = monuser;
                     MessageBox.Show("Bienvenue sur GSB", "Connexion réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
                     Menu menu = new Menu();                    
                     this.Hide();

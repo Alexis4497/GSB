@@ -10,6 +10,7 @@ namespace GSB
     static class Model
     {
         private static GSB_ZinadeEntities maConnexion;
+        private static Visiteur visiteurConnecte;
 
         public static GSB_ZinadeEntities MaConnexion
         {
@@ -24,9 +25,23 @@ namespace GSB
             }
         }
 
+        public static Visiteur VisiteurConnecte
+        {
+            get
+            {
+                return visiteurConnecte;
+            }
+
+            set
+            {
+                visiteurConnecte = value;
+            }
+        }
+
         public static void initialConnexion()
         {
             maConnexion = new GSB_ZinadeEntities();
         }
+
     }
 }

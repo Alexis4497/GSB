@@ -12,10 +12,10 @@ namespace GSB
 {
     public partial class Remboursement : Form
     {
+        Accueil login = new Accueil();
         private GSB_ZinadeDataSet maConnexion;
         public Remboursement()
         {
-            
 
             InitializeComponent();
             maConnexion = new GSB_ZinadeDataSet();
@@ -92,17 +92,35 @@ namespace GSB
         {
 
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             maConnexion = new GSB_ZinadeDataSet();
-
-            FraisForfait unFrais = new FraisForfait();
-            unFrais.libelle = textBox12.Text;
             
-
-           MessageBox.Show("Votre fiche de frais à bien été enregistrée");
+            //FraisForfait unFrais = new FraisForfait();
+            fichefrais uneFiche = new fichefrais();
+            //LigneFraisForfait xligneFraisForfait = new LigneFraisForfait();
             
+            uneFiche.dateModif = DateTime.Parse(textBox11.Text);
+            uneFiche.idVisiteur = Model.VisiteurConnecte.idVisiteur;
+            uneFiche.nbJustificatifs = 2 ; //Valeur par défaut en attendant 
+            uneFiche.montantValide = int.Parse(textBox10.Text);
+                        
+          
+            //On ajoute la fiche à la BDD
+            Model.MaConnexion.fichefrais.Add(uneFiche);
+            try
+            {
+                //On essaye de sauvegarder dans la BDD ces infos
+                Model.MaConnexion.SaveChanges();
+                MessageBox.Show("Votre fiche de frais à bien été enregistrée", "Action");
+                this.Close();
+            }
+            catch
+            {
+                //Si il y a une erreur on affiche un msg d'erreur
+                MessageBox.Show("Enregistrement annulé", "Action");
+            }
         }
        
         private void label19_Click(object sender, EventArgs e)
@@ -156,7 +174,8 @@ namespace GSB
 
         private void mesFichesDeFraisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ListeFiches fListeFiches = new ListeFiches();
+            fListeFiches.Show();
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -203,15 +222,35 @@ namespace GSB
                 textBox8.Text = totalNuitee.ToString();
                 textBox7.Text = totalRepas.ToString();
                 textBox9.Text = totalKm.ToString();
-               
             }
             catch
             {
-
-
+                
             }
         
     }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            double totalAutresFrais = 0;
+            totalAutresFrais += int.Parse(textBox14.Text) * int.Parse(textBox13.Text);
+            textBox15.Text = totalAutresFrais.ToString();
+        }
+
+        private void textBox11_TextChanged_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
 
         /*private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -221,8 +260,6 @@ namespace GSB
                 MessageBox.Show("Chiffres uniquement");
             }
             base.OnKeyPress(e);
-
-            
         }*/
     }
     }

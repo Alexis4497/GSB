@@ -77,6 +77,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ListeFiches";
             this.Text = "ListeFiches";
+            this.Load += new System.EventHandler(this.ListeFiches_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_ZinadeDataSet)).EndInit();

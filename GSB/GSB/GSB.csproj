@@ -91,6 +91,12 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FraisSupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FraisSupp.Designer.cs">
+      <DependentUpon>FraisSupp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="LigneFraisHorsForfait.cs">
       <DependentUpon>mdlGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListeFiches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeFiches.Designer.cs">
+      <DependentUpon>ListeFiches.cs</DependentUpon>
     </Compile>
     <Compile Include="mdlGSB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -183,8 +195,14 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FraisSupp.resx">
+      <DependentUpon>FraisSupp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestion.resx">
       <DependentUpon>Gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeFiches.resx">
+      <DependentUpon>ListeFiches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
