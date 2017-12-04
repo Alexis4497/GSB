@@ -27,6 +27,7 @@ namespace GSB
         public string tel { get; set; }
         public string idSpecialite { get; set; }
         public int departement { get; set; }
+        public Nullable<int> coef { get; set; }
     
         public virtual SPECIALITE SPECIALITE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

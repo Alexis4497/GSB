@@ -18,6 +18,7 @@ namespace GSB
         public MEDICAMENT()
         {
             this.OFFRIR = new HashSet<OFFRIR>();
+            this.RAPPORT = new HashSet<RAPPORT>();
         }
     
         public string idMedicament { get; set; }
@@ -30,5 +31,7 @@ namespace GSB
         public virtual FAMILLE FAMILLE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OFFRIR> OFFRIR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RAPPORT> RAPPORT { get; set; }
     }
 }
