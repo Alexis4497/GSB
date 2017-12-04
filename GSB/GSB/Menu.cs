@@ -61,5 +61,12 @@ namespace GSB
             remboursement.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RapportVisiteur rapport = new RapportVisiteur();
+            rapport.Show();
+            this.Close();
+        }
     }
 }

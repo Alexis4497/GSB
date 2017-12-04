@@ -90,15 +90,15 @@ namespace GSB
         }
 
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void btnFermer_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void validConnexion_Click_1(object sender, EventArgs e)
+        private void btnValider_Click_1(object sender, EventArgs e)
         {
             var filteredData = Model.MaConnexion.Visiteur.ToList()
-                .Where(x => x.identifiant.Equals(identifiantTextBox.Text));
+                .Where(x => x.identifiant.Equals(txtId.Text));
             if (filteredData.ToList().Count == 0)
             {
                 MessageBox.Show("Votre identifiant est incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,12 +109,12 @@ namespace GSB
                 bsConnect.MoveFirst();
                 Visiteur monuser = (Visiteur)bsConnect.Current;
                 MD5 monMD5 = MD5.Create();
-                string passwdCrypte = GetMd5Hash(monMD5, passwordTextBox.Text);
+                string passwdCrypte = GetMd5Hash(monMD5, txtMdp.Text);
                 string pswdc = monuser.password.Substring(2); // Pbs de l'hexa 0x sur sqlserver
                 if (pswdc.Equals(passwdCrypte) || monuser.password.Equals(passwdCrypte))
                 {
                     Accueil.verifConnect = true;
-                    Accueil.infoUser = identifiantTextBox.Text;
+                    Accueil.infoUser = txtId.Text;
                     Model.VisiteurConnecte = monuser;
                     MessageBox.Show("Bienvenue sur GSB", "Connexion réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);                    
                     Menu menu = new Menu();                    

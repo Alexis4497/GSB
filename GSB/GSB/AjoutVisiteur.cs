@@ -92,19 +92,19 @@ namespace GSB
             
         }
         //public string genererPseudo()
-        private void saveButton_Click(object sender, EventArgs e)
+        private void btnSauvegarder_Click(object sender, EventArgs e)
         {
 
             Visiteur visit = new Visiteur()
             {
                 idVisiteur = GenererId(),
-                identifiant = (frstNameBox.Text.Substring(0, 1) + nameBox.Text).ToLower(),
-                nom = nameBox.Text,
-                prenom = frstNameBox.Text,
-                rue = addressBox.Text,
-                ville = cityBox.Text,
-                cp = cpBox.Text,
-                idLabo = int.Parse(idLaboBox.Text),
+                identifiant = (txtPrenom.Text.Substring(0, 1) + txtNom.Text).ToLower(),
+                nom = txtNom.Text,
+                prenom = txtPrenom.Text,
+                rue = txtAdresse.Text,
+                ville = txtVille.Text,
+                cp = txtCp.Text,
+                idLabo = int.Parse(chkLabo.Text),
                 password = GenererMDP(5)
             };
 
@@ -133,6 +133,16 @@ namespace GSB
 
         }
 
-        
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtNom.ResetText();
+            txtPrenom.ResetText();
+            txtAdresse.ResetText();
+            txtCp.ResetText();
+            txtVille.ResetText();
+            chkSecteur.ResetText();
+            chkLabo.ResetText();
+            txtLabo.ResetText();
+        }
     }
 }
